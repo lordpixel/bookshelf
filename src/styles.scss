@@ -1,0 +1,165 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+/*
+ Colors
+
+  Primary: #eb2f64
+  Primary light: #ff3366
+  Primary dark: #BA265D
+
+  Grey light 1: #FAF9F9
+  Grey light 2: #F4F2F2
+  Grey light 3: #F0EEEE
+  Grey light 4: #CCC
+
+  Grey dark 1: #333
+  Grey dark 2: #777
+  Grey dark 3: #999
+*/
+
+:root {
+    --color-primary: #2f81eb;
+    --color-primary-light: #5c9bee;
+    --color-primary-dark: #0551a8;
+
+    --color-grey-light-1: #FAF9F9;
+    --color-grey-light-2: #F4F2F2;
+    --color-grey-light-3: #F0EEEE;
+    --color-grey-light-4: #CCC;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+
+}
+
+$breakpoint-largest: 75em;            // 1200px
+$breakpoint-large: 68.75em;           // 1100px
+$breakpoint-medium-large: 65em;       // 1040px
+$breakpoint-medium: 56.25em;          //  960px
+$breakpoint-small: 40em;              //  640px
+$breakpoint-smaller: 20em;            //  320px
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+
+    // 1rem === 10px  (10px / 16px) = 62.5%
+    // 16px is the default for most browsers
+    font-size: 62.5%;
+
+    @media only screen and (max-width: $breakpoint-large) {
+      font-size: 65%; 
+      background: orange;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      font-size: 60%; 
+      background: green;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium-large) {
+      font-size: 65%; 
+      background: red;
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
+
+      background: blue;
+      font-size: 65%; 
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-1);
+
+    background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-medium-large) {
+      overflow: scroll;
+    }
+}
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  height: calc(100vh - 16.98rem);
+
+  @media only screen and (max-width: $breakpoint-largest) {
+     margin: 0;
+
+     height: 100%;
+     width: 100%;
+     max-width: unset;
+  }
+}
+
+.content {
+    display: flex;
+
+  .navigation {
+    background-color: var(--color-grey-dark-3);
+    flex: 0 0 18%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: calc(100vh - 24rem);
+    
+    @media only screen and (max-width: $breakpoint-largest) {
+      min-height: 100vh;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      min-height: 100%;
+    }
+  }
+
+    @media only screen and (max-width: $breakpoint-largest) {
+        min-height: 100vh;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+        flex-direction: column;
+    }
+}
+
+.outlet {
+  color: var(--color-grey-dark-1);
+  background-color: var(--color-grey-light-2);
+  flex: 1;
+
+  height: calc(100vh - 24rem);
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    min-height: 100%;
+  }
+
+  @media only screen and (max-width: $breakpoint-largest) {
+    min-height: 100vh;
+  }
+}
