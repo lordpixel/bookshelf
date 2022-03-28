@@ -1,0 +1,27 @@
+
+header.header {
+    height: 7rem;
+    background-color: #FFF;
+    border-bottom:var(--color-grey-light-2);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    color: var(--color-primary);
+    fill: var(--color-primary);
+
+    .logo {
+        height: 7rem;
+        width: 7rem;
+
+        margin: 0.5rem;
+        margin-left: 0.5rem;
+        margin-left: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+        line-height: 10rem;
+    }
+}
