@@ -1,0 +1,20 @@
+
+<ul>
+  <ng-container *ngIf="destinationType === 'WISHLIST'">
+    <app-book
+      *ngFor="let book of state.books$ | async"
+      [book]="book"
+      [destinationType]="destinationType"
+      (addToList)="state.addTolist({listName: destinationType, bookID: book.id})"
+    ></app-book >
+  </ng-container>
+
+  <ng-container *ngIf="destinationType !== 'WISHLIST'">
+    <app-book
+      *ngFor="let book of state.wishlist$ | async"
+      [book]="book"
+      [destinationType]="destinationType"
+      (addToList)="state.addTolist({listName: destinationType, bookID: book.id})"
+    ></app-book >
+  </ng-container>
+</ul>

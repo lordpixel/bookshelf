@@ -1,0 +1,27 @@
+$breakpoint-largest: 75em;            // 1200px
+$breakpoint-large: 68.75em;           // 1100px
+$breakpoint-medium-large: 65em;       // 1040px
+$breakpoint-medium: 56.25em;          //  960px
+$breakpoint-small: 40em;              //  640px
+$breakpoint-smaller: 20em;            //  320px
+
+ul {
+    font-size: 1.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 2rem;
+    justify-items: center;
+
+    margin: 2rem;
+    padding: 0;
+
+    list-style: none;
+    overflow: scroll;
+    max-height: calc(100% - 4rem);
+    
+    @media only screen and (max-width: $breakpoint-small) {
+      display: flex;
+      flex-direction: column;
+    }
+}
