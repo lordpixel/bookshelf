@@ -1,6 +1,11 @@
 <li>
     <figure>
-        <figcaption>{{book?.title}} <svg alt="" (click)="handleHeartClick()" [class]="destinationType === 'WISHLIST' ? '' : 'wishlist'">
+        <figcaption>{{book?.title}} <svg
+            [attr.title]="getCallToAction()"
+            [attr.alt]="getCallToAction()"
+            (click)="handleHeartClick()"
+            [class]="destinationType === 'WISHLIST' ? '' : 'wishlist'"
+            >
                 <use xlink:href="assets/sprite.svg#icon-heart"></use>
             </svg>
         </figcaption>

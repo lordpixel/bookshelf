@@ -26,12 +26,17 @@ li {
             color: var(--color-primary);
             font-weight: 600;
         
-            // flag
+            // not a flag anymore.. it's our wishlist button
             svg {
                 max-width: unset;
                 width: 2rem;
                 height: 1.5rem;
                 align-self: center;
+                fill: var(--color-grey-light-4);
+
+                &:hover {
+                    fill:red;
+                }
 
                 &.wishlist {
                     fill:red;

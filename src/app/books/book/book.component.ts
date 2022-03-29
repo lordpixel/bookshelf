@@ -16,6 +16,8 @@ export class BookComponent implements OnInit {
 
   @Input() destinationType: string = LIST_TYPE.WISHLIST;
 
+  public callToAction = 'Add to Wishlist';
+
   handleHeartClick() {
     this.addToList.emit({listName: this.destinationType, bookID: this.book?.id!})
   }
@@ -24,7 +26,12 @@ export class BookComponent implements OnInit {
 
   }
 
+  getCallToAction() {
+    return this.destinationType === LIST_TYPE.WISHLIST ? 'Add to Wishlist' : 'Remove from Wishlist';
+  }
+
   ngOnInit(): void {
+    
   }
 
 }
