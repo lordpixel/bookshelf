@@ -22,4 +22,18 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render correct markup', () => {
+    fixture = TestBed.createComponent(HeaderComponent);
+    fixture.detectChanges();
+    
+    const compiled = fixture.debugElement.nativeElement;
+    const header = compiled.querySelector('header');
+    const logo = compiled.querySelector('svg');
+    const title = compiled.querySelector('h1');
+
+    expect(header).toBeTruthy();
+    expect(logo).toBeTruthy();
+    expect(title).toBeTruthy();
+  });
 });

@@ -23,18 +23,20 @@ describe('NavigationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NavigationComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render a logo', () => {
+  it('should render two navigation links', () => {
     fixture = TestBed.createComponent(NavigationComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
+    
+    const compiled = fixture.debugElement.nativeElement;
+    const listItems = compiled.querySelectorAll('li');
 
-    expect (routerSpy.navigate).toHaveBeenCalledWith(['/wishlist']);
+    expect(listItems).toHaveSize(2);
+    listItems.forEach((item: HTMLElement) => expect(['Books', 'Wishlist'].includes(item.innerText)))
   });
 });
