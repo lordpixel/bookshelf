@@ -32,10 +32,6 @@ ul {
                 margin-right: 1rem;
                 fill: currentColor;
             }
-
-            span {
-
-            }
         }
 
         a:hover {
@@ -81,7 +77,8 @@ ul {
     }
 
     li.active,
-    li:hover::before {
+    li.active::before,
+    li.active:hover::before {
         transform: scaleY(1);
         width: 100%;
     }
