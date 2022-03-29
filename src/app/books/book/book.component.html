@@ -1,0 +1,22 @@
+<li>
+    <figure>
+        <figcaption>{{book?.title}} <svg
+            [attr.title]="getCallToAction()"
+            [attr.alt]="getCallToAction()"
+            (click)="handleHeartClick()"
+            [class]="destinationType === 'WISHLIST' ? '' : 'wishlist'"
+            >
+                <use xlink:href="assets/sprite.svg#icon-heart"></use>
+            </svg>
+        </figcaption>
+        <img src="{{book?.imageLink}}" alt={{book?.title}}>
+        
+            <dl>
+                <dt>Author:</dt>
+                <dd>{{book?.author}}</dd>
+            
+                <dt>Year:</dt>
+                <dd>{{book?.year}}</dd>
+            </dl>
+    </figure>
+</li>

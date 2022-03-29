@@ -1,0 +1,4 @@
+export const LIST_TYPE = {
+    AVAILABLE: 'AVAILABLE',
+    WISHLIST: 'WISHLIST',
+};

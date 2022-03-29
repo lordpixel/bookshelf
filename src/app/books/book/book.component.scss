@@ -1,0 +1,61 @@
+li {
+    background-color: #FFF;
+    box-shadow: 4px 4px 10px -5px #333333;
+    border: solid 1px var(--color-grey-light-4);
+
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.25s ease-in-out;
+        }
+
+        figcaption {
+            display: flex;
+            justify-content: space-between;
+        
+            color: var(--color-primary);
+            font-weight: 600;
+        
+            // not a flag anymore.. it's our wishlist button
+            svg {
+                max-width: unset;
+                width: 2rem;
+                height: 1.5rem;
+                align-self: center;
+                fill: var(--color-grey-light-4);
+
+                &:hover {
+                    fill:red;
+                }
+
+                &.wishlist {
+                    fill:red;
+                }
+            }
+        }
+
+        dl {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+
+            dd {
+                color: var(--color-primary);
+            }
+
+            dt {
+                color: var(--color-grey-dark-2);
+                font-weight: 600;
+            }
+        }
+    }
+}
